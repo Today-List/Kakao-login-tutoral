@@ -39,7 +39,7 @@ struct TextFieldView4: View {
                     .foregroundColor(Color(hex: 0xF193B8A))
             })
             .alert(isPresented: $showAlert) {
-                Alert(title: Text("⚠️ 알림"), message: Text("오늘의 계획을 입력해주세요."), dismissButton: .default(Text("OK")))
+                Alert(title: Text("❗️알림❗️"), message: Text("오늘의 계획을 입력해주세요."), dismissButton: .default(Text("OK")))
             }
         }
         .textFieldStyle(DefaultTextFieldStyle())
