@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0138BAF42A1C41130054530E /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0138BAF32A1C41130054530E /* SignUp.swift */; };
+		0138BAF62A1C42580054530E /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0138BAF52A1C42580054530E /* ModalView.swift */; };
 		017913762A0CB1C600CC11BD /* PasswordChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017913752A0CB1C600CC11BD /* PasswordChangeView.swift */; };
 		0187529D2A0DECC500F70C25 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 0187529C2A0DECC500F70C25 /* FSCalendar */; };
 		0187529F2A0DED2E00F70C25 /* sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0187529E2A0DED2E00F70C25 /* sample.swift */; };
@@ -66,6 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0138BAF32A1C41130054530E /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		0138BAF52A1C42580054530E /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		017913752A0CB1C600CC11BD /* PasswordChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeView.swift; sourceTree = "<group>"; };
 		0187529E2A0DED2E00F70C25 /* sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sample.swift; sourceTree = "<group>"; };
 		01E8F71229ED573600312E04 /* Kakao-login-tutoral.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kakao-login-tutoral.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,6 +208,8 @@
 			children = (
 				01E8F76E29EE1FE800312E04 /* LoginView1.swift */,
 				01E8F77029EE200200312E04 /* Siginup1.swift */,
+				0138BAF32A1C41130054530E /* SignUp.swift */,
+				0138BAF52A1C42580054530E /* ModalView.swift */,
 				01E8F77229EE201400312E04 /* TabView1.swift */,
 			);
 			path = User;
@@ -403,6 +409,7 @@
 				01E8F79129EE22D700312E04 /* SettingView1.swift in Sources */,
 				01E8F76F29EE1FE800312E04 /* LoginView1.swift in Sources */,
 				01E8F78029EE214900312E04 /* ColorView.swift in Sources */,
+				0138BAF62A1C42580054530E /* ModalView.swift in Sources */,
 				01E8F77829EE20D300312E04 /* HeaderView3.swift in Sources */,
 				01E8F77129EE200200312E04 /* Siginup1.swift in Sources */,
 				01E8F79329EE22EA00312E04 /* ColorSchemeView1.swift in Sources */,
@@ -419,6 +426,7 @@
 				01E8F71629ED573600312E04 /* Kakao_login_tutoralApp.swift in Sources */,
 				01E8F75729ED9BCC00312E04 /* MySceneDelegate.swift in Sources */,
 				01E8F78229EE218E00312E04 /* CalenderView1.swift in Sources */,
+				0138BAF42A1C41130054530E /* SignUp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -33,11 +33,6 @@ struct SettingView1: View {
                         label: {
                             Text("테마변경")
                         })
-                    NavigationLink(
-                        destination: ShareView(),
-                        label: {
-                            Text("일정 공유하기")
-                        })
                 
                     Toggle(isOn: $notificationsEnabled, label: {
                         Text("알림 허용")

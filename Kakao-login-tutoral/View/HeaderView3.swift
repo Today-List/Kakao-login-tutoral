@@ -7,11 +7,19 @@ struct HeaderView: View {
                 .font(.title3)
                 .padding([.trailing, .leading])
                 .padding(.leading)
-            Image(systemName: "location")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 30)
-                .foregroundColor(Color(hex: 0xF193B8A))
+            Button(action: {
+                
+            }, label: {
+                
+                Image(systemName: "location")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 30)
+                    .foregroundColor(Color(hex: 0xF193B8A))
+
+                
+            })
+            
         }
     }
 }

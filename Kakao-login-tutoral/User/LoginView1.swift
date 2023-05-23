@@ -17,7 +17,7 @@ struct LoginView1: View {
     @State private var User_id: String = ""
     @State private var User_password: String = ""
     
-   
+    
     
     var body: some View {
         NavigationView{
@@ -50,7 +50,7 @@ struct LoginView1: View {
                                 .font(.headline)
                                 .foregroundColor(.white)
                                 .padding()
-                                .background(Color(hex: 0x87CEFA))
+                                .background(Color(hex: 0x7DA4FF))
                                 .cornerRadius(50)
                         })
                     .padding([.top, .bottom], 5)
@@ -70,15 +70,25 @@ struct LoginView1: View {
                                 }
                             }  label: {
                                 Image("kakaoLogin")
-                                .frame(width: 260, height: 10)
+                                    .frame(width: 260, height: 10)
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .background(Color(hex: 0x87CEFA))
+                                    .cornerRadius(50)
+                            }
+                        }
+                        .padding([.top, .bottom], 5)
+                        NavigationLink(destination: SignUp(),
+                                       label: {
+                            Text("회원가입")
+                                .font(.system(size: 15))
+                                .frame(width: 70, height: 0)
                                 .font(.headline)
                                 .foregroundColor(.white)
                                 .padding()
-                                .background(Color(hex: 0x87CEFA))
-                                .cornerRadius(50)
-                        }
-                            }
-                        
+                                .padding(.leading ,200)
+                        })
                     }
                 }
             }
