@@ -3,14 +3,9 @@ import SwiftUI
 struct TabView1: View {
     
     @State private var selection = 1
-    
-    init(){
-            //TabView 배경색 설정(파란색)
-        UITabBar.appearance().backgroundColor
-            = UIColor(Color(hex: 0x193B8A))
-        UITabBar.appearance().unselectedItemTintColor = UIColor.gray
-        }
-    
+    @StateObject private var tabViewModel = TabViewModel()
+
+
     var body: some View {
         TabView(selection: $selection) {
             Group {
@@ -45,15 +40,11 @@ struct TabView1: View {
                     .tag(3)
             }
         }
-
         .accentColor(.white)
-        .navigationBarHidden(true)
-        
-    }
-}
-
-struct TabbarView1_Previews: PreviewProvider {
-    static var previews: some View {
-        TabView1()
+                .navigationBarHidden(true)
+                .onAppear {
+                    UITabBar.appearance().backgroundColor = UIColor(tabViewModel.tabBarColor)
+                }
+                .background(tabViewModel.tabBarColor.edgesIgnoringSafeArea(.all))
     }
 }
