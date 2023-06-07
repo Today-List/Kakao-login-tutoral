@@ -7,8 +7,7 @@ extension Color {
     static let blueTheme = Color(hex: 0x6A7BA2)
     static let pinkTheme = Color(hex: 0xFBEAEB)
     static let brownTheme = Color(hex: 0x755139)
-    static let indigoTheme = Color.indigo
-    static let purpleTheme = Color.purple
+    static let baseTheme = Color(hex: 0x193B8A)
     
     // 16진수를 기반으로 Color 생성
     init(hex: UInt, alpha: Double = 1.0) {
@@ -26,8 +25,6 @@ extension Color {
         case .blueTheme: return "Blue"
         case .pinkTheme: return "Pink"
         case .brownTheme: return "Brown"
-        case .indigoTheme: return "Indigo"
-        case .purpleTheme: return "Purple"
         default: return "Unknown"
         }
     }

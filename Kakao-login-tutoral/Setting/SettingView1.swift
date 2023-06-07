@@ -6,12 +6,15 @@ struct ColorSelectionView: View {
     @Binding var isPresented: Bool
     @State private var selectedColorName: String? // 선택된 색상의 이름을 저장하기 위한 상태 변수
     
+    @Binding var selectionColor: Color
+    
     var body: some View {
         VStack {
             HStack {
                 ForEach(themes, id: \.self) { color in
                     Button(action: {
                         selectedColor = color
+                        selectionColor = selectedColor!
                         selectedColorName = color.name // 선택된 색상의 이름 저장
                     }) {
                         color
@@ -31,7 +34,7 @@ struct ColorSelectionView: View {
                 
                 // 저장 완료 후 해당 뷰를 닫기 위해 isPresented를 false로 설정합니다.
                 isPresented = false
-                print("선택된 색상은: \(selectedColorName)")
+                print("선택된 색상은: \(selectedColorName!)")
             }) {
                 Text("저장하기")
                     .frame(width: 120, height: 40)
@@ -57,20 +60,31 @@ class TabViewModel: ObservableObject {
     }
     
     private func setTabBarAppearance() {
+        // UITabBarAppearance 인스턴스 생성
         let tabBarAppearance = UITabBarAppearance()
+        
+        // 탭 바 배경색 설정
         tabBarAppearance.backgroundColor = UIColor(Color(hex: 0x193B8A))
+        
+        // 스택 레이아웃의 일반 상태에서 아이콘 색상 설정
         tabBarAppearance.stackedLayoutAppearance.normal.iconColor = UIColor.gray
+        
+        // 스택 레이아웃의 선택된 상태에서 아이콘 색상 설정
         tabBarAppearance.stackedLayoutAppearance.selected.iconColor = UIColor.white
         
+        // 일반적인 탭 바 외관에 tabBarAppearance 설정
         UITabBar.appearance().standardAppearance = tabBarAppearance
+        
+        // 스크롤 가장자리 탭 바 외관에 tabBarAppearance 설정
         UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
     }
-    
+
     @Published var tabBarColor: Color = Color(hex: 0x193B8A)
 }
 
+
 struct SettingView1: View {
-    @State private var isColorSelectionViewPresented = false
+       @State private var isColorSelectionViewPresented = false
        @State private var backgroundColor: Color? = .white
        @State private var selectedColor: Color?
        @State private var notificationsEnabled = false
@@ -138,7 +152,7 @@ struct SettingView1: View {
             updateTheme()
         }
         .sheet(isPresented: $isColorSelectionViewPresented) {
-                    ColorSelectionView(selectedColor: $backgroundColor, themes: themes, isPresented: $isColorSelectionViewPresented)
+            ColorSelectionView(selectedColor: $backgroundColor, themes: themes, isPresented: $isColorSelectionViewPresented, selectionColor: Binding.constant(Color.white))
                         .onDisappear {
                             if let selectedColor = selectedColor {
                                 backgroundColor = selectedColor
