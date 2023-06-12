@@ -7,6 +7,7 @@ struct ColorSelectionView: View {
     @State private var selectedColorName: String? // 선택된 색상의 이름을 저장하기 위한 상태 변수
     
     @Binding var selectionColor: Color
+    @StateObject private var tabViewModel = TabViewModel()
     
     var body: some View {
         VStack {
@@ -54,70 +55,44 @@ struct ColorSelectionView: View {
 }
 
 
-class TabViewModel: ObservableObject {
-    init() {
-        setTabBarAppearance()
-    }
-    
-    private func setTabBarAppearance() {
-        // UITabBarAppearance 인스턴스 생성
-        let tabBarAppearance = UITabBarAppearance()
-        
-        // 탭 바 배경색 설정
-        tabBarAppearance.backgroundColor = UIColor(Color(hex: 0x193B8A))
-        
-        // 스택 레이아웃의 일반 상태에서 아이콘 색상 설정
-        tabBarAppearance.stackedLayoutAppearance.normal.iconColor = UIColor.gray
-        
-        // 스택 레이아웃의 선택된 상태에서 아이콘 색상 설정
-        tabBarAppearance.stackedLayoutAppearance.selected.iconColor = UIColor.white
-        
-        // 일반적인 탭 바 외관에 tabBarAppearance 설정
-        UITabBar.appearance().standardAppearance = tabBarAppearance
-        
-        // 스크롤 가장자리 탭 바 외관에 tabBarAppearance 설정
-        UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
-    }
 
-    @Published var tabBarColor: Color = Color(hex: 0x193B8A)
-}
 
 
 struct SettingView1: View {
-       @State private var isColorSelectionViewPresented = false
-       @State private var backgroundColor: Color? = .white
-       @State private var selectedColor: Color?
-       @State private var notificationsEnabled = false
-       @State private var themeIndex = 0
-
-       let themes: [Color] = [Color.whiteTheme, Color.greenTheme, Color.blueTheme, Color.pinkTheme, Color.brownTheme]
-
-       let notificationCenter = UNUserNotificationCenter.current()
-
-       private func toggleUserNotification() {
-           notificationsEnabled.toggle()
-           if notificationsEnabled {
-               notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
-                   if let error = error {
-                       print(error)
-                   } else {
-                       if !granted {
-                           print("Not Granted")
-                       }
-                   }
-               }
-           }
-       }
-
-       @StateObject private var tabViewModel = TabViewModel()
-
-       init() {
-           _tabViewModel = StateObject(wrappedValue: TabViewModel())
-       }
-
-       @Environment(\.colorScheme) var colorScheme
-       @Environment(\.presentationMode) var presentationMode
-
+    @State private var isColorSelectionViewPresented = false
+    @State private var backgroundColor: Color? = .white
+    @State private var selectedColor: Color?
+    @State private var notificationsEnabled = false
+    @State private var themeIndex = 0
+    
+    let themes: [Color] = [Color.whiteTheme, Color.greenTheme, Color.blueTheme, Color.pinkTheme, Color.brownTheme]
+    
+    let notificationCenter = UNUserNotificationCenter.current()
+    
+    private func toggleUserNotification() {
+        notificationsEnabled.toggle()
+        if notificationsEnabled {
+            notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+                if let error = error {
+                    print(error)
+                } else {
+                    if !granted {
+                        print("Not Granted")
+                    }
+                }
+            }
+        }
+    }
+    
+    @StateObject private var tabViewModel = TabViewModel()
+    
+    init() {
+        _tabViewModel = StateObject(wrappedValue: TabViewModel())
+    }
+    
+    @Environment(\.colorScheme) var colorScheme
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         VStack {
             Form {
@@ -150,15 +125,17 @@ struct SettingView1: View {
         .background(backgroundColor.edgesIgnoringSafeArea(.all))
         .onAppear {
             updateTheme()
+            tabViewModel.tabBarColor = backgroundColor ?? Color(hex: 0x193B8A)
         }
         .sheet(isPresented: $isColorSelectionViewPresented) {
             ColorSelectionView(selectedColor: $backgroundColor, themes: themes, isPresented: $isColorSelectionViewPresented, selectionColor: Binding.constant(Color.white))
-                        .onDisappear {
-                            if let selectedColor = selectedColor {
-                                backgroundColor = selectedColor
-                            }
-                        }
+                .onDisappear {
+                    if let selectedColor = selectedColor {
+                        backgroundColor = selectedColor
+                        tabViewModel.tabBarColor = selectedColor
+                    }
                 }
+        }
     }
     
     func tabBarColor() -> Color {

@@ -17,7 +17,42 @@ struct LoginView1: View {
     @State private var User_id: String = ""
     @State private var User_password: String = ""
     
-    
+    func sendLoginRequest() {
+            guard let url = URL(string: "http://todorack.netlify.app/users/login") else {
+                print("Invalid URL")
+                return
+            }
+
+            let parameters = [
+                "User_id": User_id,
+                "User_password": User_password
+                // Add other parameters if needed
+            ]
+
+            guard let postData = try? JSONSerialization.data(withJSONObject: parameters) else {
+                print("Failed to serialize parameters")
+                return
+            }
+
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpBody = postData
+
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    print("Error: \(error)")
+                    return
+                }
+
+                // Handle the response from the server if needed
+                if let data = data {
+                    if let jsonString = String(data: data, encoding: .utf8) {
+                        print("Response: \(jsonString)")
+                    }
+                }
+            }.resume()
+        }
     
     var body: some View {
         NavigationView{
@@ -25,7 +60,7 @@ struct LoginView1: View {
                 Color(hex: 0xF193B8A).ignoresSafeArea()
                 
                 VStack{
-                    Image("로고버튼")
+                    Image("logo")
                         .resizable()
                         .frame(width: 120, height: 120)
                         .padding(.bottom)
@@ -53,6 +88,9 @@ struct LoginView1: View {
                                 .background(Color(hex: 0x7DA4FF))
                                 .cornerRadius(50)
                         })
+                    .onTapGesture {
+                                    sendLoginRequest()
+                                }
                     .padding([.top, .bottom], 5)
                     VStack{
                         HStack{

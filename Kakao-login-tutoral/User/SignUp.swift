@@ -26,6 +26,43 @@ struct SignUp: View {
     
     @Environment(\.presentationMode) var presentatio
     
+    func sendSignUpRequest() {
+            guard let url = URL(string: "http://todorack.netlify.app/users/new-user") else {
+                print("Invalid URL")
+                return
+            }
+            let parameters = [
+                "Nickname": Nickname,
+                "Email": Email,
+                "Password": Password
+                // Add other parameters if needed
+            ]
+
+            guard let postData = try? JSONSerialization.data(withJSONObject: parameters) else {
+                print("Failed to serialize parameters")
+                return
+            }
+
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpBody = postData
+
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    print("Error: \(error)")
+                    return
+                }
+
+                // Handle the response from the server if needed
+                if let data = data {
+                    if let jsonString = String(data: data, encoding: .utf8) {
+                        print("Response: \(jsonString)")
+                    }
+                }
+            }.resume()
+        }
+    
     var body: some View {
         NavigationView{
             ScrollView{
@@ -127,6 +164,7 @@ struct SignUp: View {
                 
                 Button(action: {
                     presentatio.wrappedValue.dismiss()
+                    sendSignUpRequest()
                 }, label: {
                     Text("회원가입")
                         .frame(width: 290, height: 10)

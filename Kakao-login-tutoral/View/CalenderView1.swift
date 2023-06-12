@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct CalenderView1: View {
-//    @State private var selectedDate: Date?
     @State private var eventData: [Date: String] = [:]
     @State private var isPresentingModal = false
     @State private var selectedDate = Date()
@@ -13,13 +12,6 @@ struct CalenderView1: View {
                 .datePickerStyle(.graphical)
                 .padding()
                 .accentColor(Color(hex: 0xF193B8A))
-//            VStack {
-//                            FSCalendarView(selectedDate: $selectedDate, eventData: $eventData, isPresentingModal: $isPresentingModal)
-//                                .frame(height: 300)
-//                        }
-//                        .sheet(isPresented: $isPresentingModal) {
-//                            AddEventView(eventData: $eventData, isPresentingModal: $isPresentingModal)
-//                        }
             VStack{
                 HeaderView()
                 TextFieldView4()

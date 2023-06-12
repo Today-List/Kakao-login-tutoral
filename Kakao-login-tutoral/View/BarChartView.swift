@@ -24,9 +24,24 @@ struct BarChartView: View {
     var body: some View {
         VStack{
             Text("이번달 달성율")
-                .font(.title3.bold())
+                .font(.title2.bold())
                 .padding()
                 .padding(.top, 30)
+            HStack {
+                Button(action: {
+                    //친구추가
+                },
+                    label: {
+                    Image(systemName: "plus.circle")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 40, height: 40)
+                        .padding(.trailing, 280)
+                        .foregroundColor(Color(hex: 0x193B8A)) // 이미지 색상 설정
+                       
+                })
+
+            }
             Chart {
                 ForEach(postings) { posting in
                     BarMark(
@@ -35,7 +50,8 @@ struct BarChartView: View {
                     )}
             }
             .padding([.top, .bottom], 100)
-            .foregroundColor(Color(hex: 0x6A82B8))
+            .foregroundColor(Color(hex: 0xFF9967))
+            .cornerRadius(10)
         }
     }
 }

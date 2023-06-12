@@ -12,7 +12,6 @@
 		017913762A0CB1C600CC11BD /* PasswordChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017913752A0CB1C600CC11BD /* PasswordChangeView.swift */; };
 		0187529D2A0DECC500F70C25 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 0187529C2A0DECC500F70C25 /* FSCalendar */; };
 		0187529F2A0DED2E00F70C25 /* sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0187529E2A0DED2E00F70C25 /* sample.swift */; };
-		01D630382A25D0A300DCF2C6 /* ColorSelectionModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D630372A25D0A300DCF2C6 /* ColorSelectionModal.swift */; };
 		01E8F71629ED573600312E04 /* Kakao_login_tutoralApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E8F71529ED573600312E04 /* Kakao_login_tutoralApp.swift */; };
 		01E8F71829ED573600312E04 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E8F71729ED573600312E04 /* ContentView.swift */; };
 		01E8F71A29ED573600312E04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01E8F71929ED573600312E04 /* Assets.xcassets */; };
@@ -33,7 +32,6 @@
 		01E8F75729ED9BCC00312E04 /* MySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E8F75629ED9BCC00312E04 /* MySceneDelegate.swift */; };
 		01E8F75929EDA31F00312E04 /* KakaoAuthVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E8F75829EDA31F00312E04 /* KakaoAuthVM.swift */; };
 		01E8F76F29EE1FE800312E04 /* LoginView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E8F76E29EE1FE800312E04 /* LoginView1.swift */; };
-		01E8F77129EE200200312E04 /* Siginup1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E8F77029EE200200312E04 /* Siginup1.swift */; };
 		01E8F77329EE201400312E04 /* TabView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E8F77229EE201400312E04 /* TabView1.swift */; };
 		01E8F77629EE20C200312E04 /* object2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E8F77529EE20C200312E04 /* object2.swift */; };
 		01E8F77829EE20D300312E04 /* HeaderView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E8F77729EE20D300312E04 /* HeaderView3.swift */; };
@@ -45,7 +43,6 @@
 		01E8F78729EE226E00312E04 /* authView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E8F78629EE226E00312E04 /* authView1.swift */; };
 		01E8F78929EE227D00312E04 /* editProfileView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E8F78829EE227D00312E04 /* editProfileView1.swift */; };
 		01E8F79129EE22D700312E04 /* SettingView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E8F79029EE22D700312E04 /* SettingView1.swift */; };
-		01E8F79329EE22EA00312E04 /* ColorSchemeView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E8F79229EE22EA00312E04 /* ColorSchemeView1.swift */; };
 		01E8F7A529F8D39D00312E04 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E8F7A429F8D39D00312E04 /* BarChartView.swift */; };
 		01E8F7A929FB603800312E04 /* editProView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E8F7A829FB603800312E04 /* editProView.swift */; };
 /* End PBXBuildFile section */
@@ -72,7 +69,6 @@
 		0138BAF52A1C42580054530E /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		017913752A0CB1C600CC11BD /* PasswordChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeView.swift; sourceTree = "<group>"; };
 		0187529E2A0DED2E00F70C25 /* sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sample.swift; sourceTree = "<group>"; };
-		01D630372A25D0A300DCF2C6 /* ColorSelectionModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectionModal.swift; sourceTree = "<group>"; };
 		01E8F71229ED573600312E04 /* Kakao-login-tutoral.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kakao-login-tutoral.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E8F71529ED573600312E04 /* Kakao_login_tutoralApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kakao_login_tutoralApp.swift; sourceTree = "<group>"; };
 		01E8F71729ED573600312E04 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,7 +85,6 @@
 		01E8F75629ED9BCC00312E04 /* MySceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySceneDelegate.swift; sourceTree = "<group>"; };
 		01E8F75829EDA31F00312E04 /* KakaoAuthVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthVM.swift; sourceTree = "<group>"; };
 		01E8F76E29EE1FE800312E04 /* LoginView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView1.swift; sourceTree = "<group>"; };
-		01E8F77029EE200200312E04 /* Siginup1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Siginup1.swift; sourceTree = "<group>"; };
 		01E8F77229EE201400312E04 /* TabView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView1.swift; sourceTree = "<group>"; };
 		01E8F77529EE20C200312E04 /* object2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = object2.swift; sourceTree = "<group>"; };
 		01E8F77729EE20D300312E04 /* HeaderView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView3.swift; sourceTree = "<group>"; };
@@ -101,7 +96,6 @@
 		01E8F78629EE226E00312E04 /* authView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = authView1.swift; sourceTree = "<group>"; };
 		01E8F78829EE227D00312E04 /* editProfileView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editProfileView1.swift; sourceTree = "<group>"; };
 		01E8F79029EE22D700312E04 /* SettingView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView1.swift; sourceTree = "<group>"; };
-		01E8F79229EE22EA00312E04 /* ColorSchemeView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeView1.swift; sourceTree = "<group>"; };
 		01E8F7A429F8D39D00312E04 /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
 		01E8F7A829FB603800312E04 /* editProView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editProView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,7 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				01E8F76E29EE1FE800312E04 /* LoginView1.swift */,
-				01E8F77029EE200200312E04 /* Siginup1.swift */,
 				0138BAF32A1C41130054530E /* SignUp.swift */,
 				0138BAF52A1C42580054530E /* ModalView.swift */,
 				01E8F77229EE201400312E04 /* TabView1.swift */,
@@ -235,8 +228,6 @@
 			isa = PBXGroup;
 			children = (
 				01E8F79029EE22D700312E04 /* SettingView1.swift */,
-				01D630372A25D0A300DCF2C6 /* ColorSelectionModal.swift */,
-				01E8F79229EE22EA00312E04 /* ColorSchemeView1.swift */,
 				01E8F78829EE227D00312E04 /* editProfileView1.swift */,
 				01E8F78629EE226E00312E04 /* authView1.swift */,
 				01E8F7A829FB603800312E04 /* editProView.swift */,
@@ -403,7 +394,6 @@
 			files = (
 				01E8F77C29EE210600312E04 /* TodoListView5.swift in Sources */,
 				0187529F2A0DED2E00F70C25 /* sample.swift in Sources */,
-				01D630382A25D0A300DCF2C6 /* ColorSelectionModal.swift in Sources */,
 				01E8F7A929FB603800312E04 /* editProView.swift in Sources */,
 				01E8F7A529F8D39D00312E04 /* BarChartView.swift in Sources */,
 				01E8F79129EE22D700312E04 /* SettingView1.swift in Sources */,
@@ -411,8 +401,6 @@
 				01E8F78029EE214900312E04 /* ColorView.swift in Sources */,
 				0138BAF62A1C42580054530E /* ModalView.swift in Sources */,
 				01E8F77829EE20D300312E04 /* HeaderView3.swift in Sources */,
-				01E8F77129EE200200312E04 /* Siginup1.swift in Sources */,
-				01E8F79329EE22EA00312E04 /* ColorSchemeView1.swift in Sources */,
 				01E8F77E29EE211800312E04 /* SaveLoadButtonView6.swift in Sources */,
 				01E8F77329EE201400312E04 /* TabView1.swift in Sources */,
 				01E8F75929EDA31F00312E04 /* KakaoAuthVM.swift in Sources */,
