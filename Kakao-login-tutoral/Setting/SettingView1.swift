@@ -32,7 +32,7 @@ struct ColorSelectionView: View {
             
             Button(action: {
                 // 저장하기 버튼에 대한 액션을 추가해주세요
-                
+                selectedColor
                 // 저장 완료 후 해당 뷰를 닫기 위해 isPresented를 false로 설정합니다.
                 isPresented = false
                 print("선택된 색상은: \(selectedColorName!)")

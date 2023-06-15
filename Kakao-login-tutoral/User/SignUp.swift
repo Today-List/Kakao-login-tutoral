@@ -13,12 +13,10 @@ struct SignUp: View {
         let emailRegex = "[A-Z0-9a-z._%+-]+@office.skhu.ac.kr"
         return  NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: str)
     }
-    @State private var Name: String = "" // 이름
     @State private var Nickname: String = "" // 닉네임
-    @State private var Email: String = "" // 학번
+    @State private var Email: String = "" // 이메일
     @State private var Password: String = "" // 비밀번호
     @State private var RepeatedPassword: String = ""
-    @State private var Semester: Int = 0 // 학기
     @State private var passwordError = ""
     @State var CheckMessage: String = "ex) abc123@naver.com"
     @State var ShowModel: Bool = false
@@ -120,7 +118,7 @@ struct SignUp: View {
                     }
                     
                 }
-                .padding(.bottom, 16)// 학번 중복확인 HStack
+                .padding(.bottom, 16)// 이메일 중복확인 HStack
                 VStack(spacing: 15){ // 비밀번호 입력 받는 SecureField
                     SecureField("비밀번호를 입력해주세요 *", text: $Password)
                         .padding()
@@ -135,7 +133,7 @@ struct SignUp: View {
                                 passwordError = "비밀번호가 일치하지 않습니다."
                             }
                         }
-                        .padding(.bottom, 10)// 학번 중복확인 HStack
+                        .padding(.bottom, 10)// 이메일 중복확인 HStack
                     
                     VStack(spacing: 5){ // 비밀번호 입력 확인 안내문구와 SecureField
                         SecureField("비밀번호를 한번 더 입력해주세요*", text: $RepeatedPassword)

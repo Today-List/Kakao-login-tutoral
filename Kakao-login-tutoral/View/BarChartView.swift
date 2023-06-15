@@ -1,7 +1,6 @@
 import Charts
 import SwiftUI
 
-// 밑에서 쭉 설명할 Marks에 대해서도 동일한 Postings 데이터 적용
 struct Posting: Identifiable {
     let name: String
     let count: Int
@@ -40,7 +39,6 @@ struct BarChartView: View {
                         .foregroundColor(Color(hex: 0x193B8A)) // 이미지 색상 설정
                        
                 })
-
             }
             Chart {
                 ForEach(postings) { posting in
@@ -48,10 +46,11 @@ struct BarChartView: View {
                         x: .value("Name", posting.name),
                         y: .value("Posting", posting.count)
                     )}
+                .cornerRadius(10)
             }
             .padding([.top, .bottom], 100)
             .foregroundColor(Color(hex: 0xFF9967))
-            .cornerRadius(10)
+            
         }
     }
 }

@@ -3,14 +3,9 @@ import SwiftUI
 struct TabView1: View {
     
     @State private var selection = 1
-//    @StateObject private var tabViewModel = TabViewModel()
     @State private var selectedColor = Color.baseTheme
     
-    
-//    init() {
-//            UITabBar.appearance().unselectedItemTintColor = UIColor.white
-//    }
-    
+   
     var body: some View {
         TabView(selection: $selection) {
             Group {
@@ -52,7 +47,6 @@ struct TabView1: View {
             UITabBar.appearance().backgroundColor = UIColor(selectedColor) // 탭 바의 배경색을 tabViewModel.tabBarColor에 설정된 색상으로 변경합니다.
             UITabBar.appearance().barTintColor = .white
         }
-//        .background(tabViewModel.tabBarColor.edgesIgnoringSafeArea(.all)) // 배경에 tabViewModel.tabBarColor에 설정된 색상을 사용하고, safe area를 무시하도록 설정합니다.
     }
 }
 class TabViewModel: ObservableObject {
